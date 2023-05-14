@@ -21,4 +21,12 @@ def check_pwd(pwd):
     if is_upper == False:
         return False
 
+    # check there is at least one digit
+    for i in pwd:
+        if i.isdigit():
+            is_digit= True
+            break
+    if is_digit == False:
+        return False
+
     return True

@@ -28,8 +28,18 @@ class TestCase(unittest.TestCase):
         self.assertFalse(check_pwd(pwd)) 
 
     def test6(self):
-        # len(pwd) == 10
+        # len(pwd) == 9 & Lower + Upper
         pwd = "AAAAAAaAA"
+        self.assertFalse(check_pwd(pwd)) 
+
+    def test7(self):
+        # len(pwd) == 10 & Lower + Digit
+        pwd = "AAAAAAAA12"
+        self.assertFalse(check_pwd(pwd)) 
+
+    def test8(self):
+        # len(pwd) == 10 & Upper + Digit
+        pwd = "aaaaaaaa12"
         self.assertFalse(check_pwd(pwd)) 
 
 
