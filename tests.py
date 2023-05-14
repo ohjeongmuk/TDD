@@ -12,5 +12,10 @@ class TestCase(unittest.TestCase):
         pwd = "aaaaaaaaa1"
         self.assertFalse(check_pwd(pwd))
 
+    def test3(self):
+        # len(pwd) == 21
+        pwd = "Asdfgdddddddddddddd12"
+        self.assertFalse(check_pwd(pwd)) 
+
 if __name__ == '__main__':
     unittest.main()
