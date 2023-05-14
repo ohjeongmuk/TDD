@@ -17,5 +17,16 @@ class TestCase(unittest.TestCase):
         pwd = "Asdfgdddddddddddddd12"
         self.assertFalse(check_pwd(pwd)) 
 
+    def test4(self):
+        # len(pwd) == 8 & All lower
+        pwd = "ABCDEFGH"
+        self.assertFalse(check_pwd(pwd)) 
+    
+    def test5(self):
+        # len(pwd) == 7 & All upper
+        pwd = "asdfghjs"
+        self.assertFalse(check_pwd(pwd)) 
+
+
 if __name__ == '__main__':
     unittest.main()
