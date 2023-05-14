@@ -1,6 +1,7 @@
 def check_pwd(pwd):
     is_lower = False
     is_upper = False
+    is_digit = False
 
     if len(pwd) < 8 or len(pwd) > 20:
         return False
@@ -28,5 +29,9 @@ def check_pwd(pwd):
             break
     if is_digit == False:
         return False
-
+    
+    # check there is at least one symbol
+    if pwd.isalnum():
+        return False 
+    
     return True

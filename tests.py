@@ -42,6 +42,25 @@ class TestCase(unittest.TestCase):
         pwd = "aaaaaaaa12"
         self.assertFalse(check_pwd(pwd)) 
 
+    def test9(self):
+        # len(pwd) == 10 & Upper + Lower + Digit 
+        pwd = "AAAaaaaaa12"
+        self.assertFalse(check_pwd(pwd)) 
+
+    def test10(self):
+        # len(pwd) == 10 & Upper + Lower + Symbol
+        pwd = "Aaaaaaaaaa!"
+        self.assertFalse(check_pwd(pwd)) 
+
+    def test11(self):
+        # len(pwd) == 10 & Upper + Lower + Digit 
+        pwd = "Aaaaaaaaa12"
+        self.assertFalse(check_pwd(pwd)) 
+
+    def test12(self):
+        # len(pwd) == 10 & Upper + Digit + Symbol 
+        pwd = "AAAAAAAA12!"
+        self.assertFalse(check_pwd(pwd)) 
 
 if __name__ == '__main__':
     unittest.main()
