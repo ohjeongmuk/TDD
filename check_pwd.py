@@ -2,6 +2,8 @@ def check_pwd(pwd):
     is_lower = False
     is_upper = False
     is_digit = False
+    symbol = ['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '-', '=']
+    is_symbol = False
 
     if len(pwd) < 8 or len(pwd) > 20:
         return False
@@ -31,7 +33,12 @@ def check_pwd(pwd):
         return False
     
     # check there is at least one symbol
-    if pwd.isalnum():
-        return False 
+    for i in pwd:
+        for j in symbol:
+            if i == j:
+                is_symbol = True
+                break
+    if is_symbol == False:
+        return False
     
     return True
